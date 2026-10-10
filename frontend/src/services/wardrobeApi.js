@@ -1,0 +1,10 @@
+import api from './api';
+export const getWardrobe = (params) => api.get('/wardrobe', { params });
+export const getWardrobeItem = (id) => api.get(`/wardrobe/${id}`);
+export const createWardrobeItem = (data) => api.post('/wardrobe', data);
+export const updateWardrobeItem = (id, data) => api.put(`/wardrobe/${id}`, data);
+export const deleteWardrobeItem = (id) => api.delete(`/wardrobe/${id}`);
+export const updateAvailability = (id, availability) => api.patch(`/wardrobe/${id}/availability`, { availability });
+export const updateLaundryStatus = (id, laundryStatus) => api.patch(`/wardrobe/${id}/laundry`, { laundryStatus });
+export const markWardrobeItemWorn = (id) => api.post(`/wardrobe/${id}/wear`);
+export const analyzeWardrobeItem = (id) => api.post(`/wardrobe/${id}/analyze`);
